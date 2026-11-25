@@ -1,4 +1,5 @@
-@font-face { font-family: Nunito; src: url(fonts/Nunito.ttf) format('truetype'); font-weight: 200 1000; font-display: block; }
+@font-face { font-family: Nunito; src: url(fonts/Nunito-700.ttf) format('truetype'); font-weight: 100 799; font-display: block; }
+@font-face { font-family: Nunito; src: url(fonts/Nunito-900.ttf) format('truetype'); font-weight: 800 1000; font-display: block; }
 @font-face { font-family: Andika; src: url(fonts/Andika-Regular.ttf) format('truetype'); font-weight: 400; font-display: block; }
 @font-face { font-family: Andika; src: url(fonts/Andika-Bold.ttf) format('truetype'); font-weight: 700; font-display: block; }
 :root { --bg: #FFF7EC; --bg2: #FFEFD9; --ink: #2B2250; --ink2: #6B6390; --card: #fff; --line: #EFE6D6; --pri: #7C5CFF; --pri2: #5B3FE0; --ok: #2BC48A; --ok2: #1A9E6C; --no: #FF5C6C; --gold: #FFC21A;
@@ -78,8 +79,8 @@ h1 { font-size: 26px; margin: 0; font-weight: 900; letter-spacing: -.3px; }
 .ring-in { position: absolute; inset: 0; display: grid; place-items: center; font-weight: 900; font-size: 16px; }
 .worlds { display: grid; grid-template-columns: 1fr; gap: 14px; }
 @media (min-width: 640px) { .worlds { grid-template-columns: 1fr 1fr; } }
-.world { display: flex; align-items: center; gap: 14px; padding: 14px; text-align: left; position: relative; overflow: hidden; }
-.world::after { content: ''; position: absolute; right: -40px; top: -40px; width: 140px; height: 140px; border-radius: 50%; background: var(--wc); opacity: .08; }
+.world.card3d { display: flex; align-items: center; gap: 14px; padding: 14px; text-align: left; position: relative; overflow: hidden; }
+.world.card3d::after { content: ''; position: absolute; right: -40px; top: -40px; width: 140px; height: 140px; border-radius: 50%; background: var(--wc); opacity: .08; }
 .w-ic { width: 70px; height: 70px; border-radius: 22px; background: var(--wc); color: #fff; display: grid; place-items: center; flex: none; box-shadow: 0 4px 0 color-mix(in srgb, var(--wc) 70%, #000); }
 .w-ic.big { width: 84px; height: 84px; }
 .w-ic .clock { width: 58px; height: 58px; } .wi-t { font-size: 38px; font-weight: 900; line-height: 1; } .wi-t.abc { font-family: Andika, Nunito, sans-serif; font-size: 34px; }
@@ -92,7 +93,7 @@ h1 { font-size: 26px; margin: 0; font-weight: 900; letter-spacing: -.3px; }
 .ex b { font-size: 15px; line-height: 1.15; } .ex small { font-size: 12.5px; color: var(--ink2); } .ex-em { width: 38px; height: 38px; }
 
 /* Welt */
-.world .top h1, .grid .top h1 { color: var(--wc); }
+.wscr .top h1, .grid .top h1 { color: var(--wc); }
 .w-hero { display: flex; align-items: center; gap: 14px; padding: 6px 4px 14px; } .w-hero b { font-size: 22px; display: block; color: #E09600; } .w-hero small { color: var(--ink2); }
 .wx { display: grid; gap: 10px; margin-bottom: 8px; }
 .wxb { display: flex; align-items: center; gap: 12px; padding: 12px 14px; text-align: left; } .wxb b { display: block; font-size: 17px; } .wxb small { color: var(--ink2); font-size: 14px; }

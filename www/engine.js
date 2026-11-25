@@ -133,7 +133,7 @@
   G.cread = function (lv, ctx) {
     var t = randTime(lv.p.step); var opts = [t]; var guard = 0;
     while (opts.length < 4 && guard++ < 100) {
-      var o = rnd() < 0.5 ? { h: t.h, m: (t.m + pick([15, 30, 45, 5, 10, 50]) * (lv.p.step >= 60 ? 0 : 1)) % 60 } : { h: h12(t.h + pick([1, 2, 11, 6])), m: t.m };
+      var offs = lv.p.step >= 15 ? [15, 30, 45] : lv.p.step >= 5 ? [5, 10, 15, 30, 45, 50, 55] : [1, 2, 5, 10, 15, 30, 45]; var o = rnd() < 0.55 ? { h: t.h, m: (t.m + pick(offs)) % 60 } : { h: h12(t.h + pick([1, 2, 11, 6])), m: t.m };
       if (lv.p.step >= 60) o = { h: h12(t.h + ri(1, 11)), m: 0 };
       if (lv.p.step === 30 && rnd() < 0.5) o = { h: h12(t.h + ri(1, 11)), m: pick([0, 30]) };
       if (lv.p.step === 1 && rnd() < 0.5) o = { h: t.h, m: (t.m + ri(1, 59)) % 60 };

@@ -86,7 +86,7 @@
       return '<div class="node-row ' + (i % 2 ? 'r' : 'l') + '"><button class="node' + (un ? '' : ' lock') + cur + '" data-lv="' + l.id + '" style="--wc:' + w.color + '"><span class="nn">' + (un ? i + 1 : svgI('lock')) + '</span></button>' +
         '<div class="node-tx"><b>' + t(l.id) + '</b>' + starRow(pr ? pr.stars : 0) + '</div></div>';
     }).join('');
-    h('<div class="scr world" style="--wc:' + w.color + '">' + topbar(wname(id), 'home', w.color) + '<div class="w-hero"><span class="w-ic big">' + worldIcon(id) + '</span><div><b>★ ' + E.worldStars(p, id).have + '/' + E.worldStars(p, id).max + '</b><small>' + t('wd_' + id) + '</small></div></div>' + extra + '<div class="path">' + path + '</div></div>');
+    h('<div class="scr wscr" style="--wc:' + w.color + '">' + topbar(wname(id), 'home', w.color) + '<div class="w-hero"><span class="w-ic big">' + worldIcon(id) + '</span><div><b>★ ' + E.worldStars(p, id).have + '/' + E.worldStars(p, id).max + '</b><small>' + t('wd_' + id) + '</small></div></div>' + extra + '<div class="path">' + path + '</div></div>');
     qa('[data-lv]').forEach(function (b) { b.onclick = function () { if (b.classList.contains('lock')) { LW.sfx('no'); snack(t('locked')); b.classList.add('shake'); setTimeout(function () { b.classList.remove('shake'); }, 400); return; } LW.sfx('tap'); startLevel(b.dataset.lv); }; });
     var cur = q('.node.cur'); if (cur) setTimeout(function () { cur.scrollIntoView({ block: 'center', behavior: 'smooth' }); }, 120);
   }
